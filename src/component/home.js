@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
   account: {
     color: 'red',
     fontSize: RFValue(20),
+    textAlign: 'center',
   },
   btnEnglish: {
     backgroundColor: 'purple',

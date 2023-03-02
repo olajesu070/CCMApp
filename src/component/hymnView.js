@@ -23,10 +23,14 @@ const HymnView = ({navigation, route}) => {
           <View>
             {item.map((verse, i) => (
               <View style={styles.verseView} key={i}>
-                <Text style={[styles.verse, {marginRight: RFValue(6)}]}>
+                <Text
+                  selectable={true}
+                  style={[styles.verse, {marginRight: RFValue(6)}]}>
                   {verse.id}
                 </Text>
-                <Text style={styles.verse}>{verse.song}</Text>
+                <Text selectable={true} style={styles.verse}>
+                  {verse.song}
+                </Text>
               </View>
             ))}
           </View>

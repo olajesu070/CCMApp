@@ -10,9 +10,8 @@ import {
 } from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {SIZES} from '../constant/global';
-import {English} from './english';
 import SongIndex from './song';
-import Yoruba from './yoruba';
+import {Yoruba} from './yoruba';
 const {width, height} = Dimensions.get('window');
 
 // create a component
