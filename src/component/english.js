@@ -485,7 +485,7 @@ export const English = [
       },
       {
         id: '3',
-        song: 'So now herself my soul Would wholly give Into His sacred chargeIn whom all spirits live',
+        song: 'So now herself my soul Would wholly give Into His sacred charge in whom all spirits live',
       },
       {
         id: '4',
@@ -501,7 +501,7 @@ export const English = [
       },
       {
         id: '7',
-        song: 'One Sacred Trinity, One Lord Divine,May I be ever His,And He for ever mine',
+        song: 'One Sacred Trinity, One Lord Divine, May I be ever His, And He for ever mine',
       },
     ],
   },

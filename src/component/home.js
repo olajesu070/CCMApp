@@ -1,11 +1,24 @@
 //import liraries
-import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Button,
+} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {SIZES} from '../constant/global';
+import Modal from 'react-native-modal';
 
 // create a component
 const Home = ({navigation}) => {
+  const [visible, setVisible] = useState(false);
+
+  const toggleModal = () => {
+    setVisible(!visible);
+  };
   return (
     <View style={styles.container}>
       <Image source={require('../asset/ccm_logo.jpg')} style={styles.img} />
@@ -16,18 +29,42 @@ const Home = ({navigation}) => {
             <Text style={styles.english}>English</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('HymnalYoruba')}>
           <View style={styles.btnYoruba}>
             <Text style={styles.yoruba}>Yoruba</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={toggleModal}>
           <View style={styles.accountDetails}>
             <Text style={styles.account}>PAY OFFERING</Text>
           </View>
         </TouchableOpacity>
       </View>
       <Text style={styles.desc}>SELECT YOUR PREFERRED LANGUAGE</Text>
+
+      <Modal
+        isVisible={visible}
+        onBackdropPress={toggleModal}
+        backdropOpacity={0.8}>
+        <View style={styles.modal}>
+          <Text
+            style={[
+              styles.modalText,
+              {fontWeight: '700', marginBottom: RFValue(10)},
+            ]}>
+            Bank Account Details
+          </Text>
+          <Text selectable={true} style={styles.modalText}>
+            0176782118
+          </Text>
+          <Text selectable={true} style={styles.modalText}>
+            Union bank
+          </Text>
+          <Text selectable={true} style={styles.modalText}>
+            Christ Chosen Outreach Group
+          </Text>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -94,6 +131,20 @@ const styles = StyleSheet.create({
     fontSize: RFValue(18),
     fontWeight: '700',
     color: 'white',
+  },
+  modal: {
+    backgroundColor: 'white',
+    height: RFValue(200),
+    borderRadius: RFValue(10),
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: RFValue(3),
+  },
+  modalText: {
+    color: 'purple',
+    fontSize: RFValue(25),
+    fontWeight: '400',
   },
 });
 

@@ -4,6 +4,7 @@ import Home from '../component/home';
 import Onboard from '../component/onBoarding';
 import Hymnal from '../component/hymnal';
 import HymnView from '../component/hymnView';
+import HymnalYoruba from '../component/hymnalYoruba';
 
 //Stack Navigator
 const Stack = createNativeStackNavigator();
@@ -17,6 +18,7 @@ const AppNavigation = () => {
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Hymnal" component={Hymnal} />
       <Stack.Screen name="HymnView" component={HymnView} />
+      <Stack.Screen name="HymnalYoruba" component={HymnalYoruba} />
     </Stack.Navigator>
   );
 };
